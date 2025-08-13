@@ -104,7 +104,7 @@ class DetectionPipeline:
 
 detection_pipeline = DetectionPipeline(detector=mtcnn,n_frames=20, batch_size=60)
 
-model = tf.keras.models.load_model(r"C:\Users\Admin\Desktop\project\Deepfake detection-Final\Video_models")
+model = tf.keras.models.load_model("Video_models")
 
 #=======================================================================================================================
 #=======================================================================================================================
@@ -125,7 +125,7 @@ def image_predictor (image_path):
                          )
 
     # Path to the directory  model files 
-    model_dir = r'C:\Users\Admin\Desktop\project\Deepfake detection-Final\image_models'
+    model_dir = 'image_models'
 
     model = ViTForImageClassification.from_pretrained(model_dir)
     image = Image.open(image_path)
